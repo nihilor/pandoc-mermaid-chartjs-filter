@@ -14,7 +14,7 @@ utils
 function createLogger() {
     //  it's necessary to redirect any standard output into a file
     //  otherwise pandoc will break
-    const loggerFilename    = path.join(process.cwd(), 'pandoc-mermaid-chart-filter.log')
+    const loggerFilename    = path.join(process.cwd(), 'pandoc-mermaid-chartjs-filter.log')
     const loggerStream      = fs.createWriteStream(loggerFilename)
     const { log }           = console
 

@@ -8,19 +8,6 @@ lerna-debug.log*
 .pnpm-debug.log*
 pandic-mermaid-chart-filter.log
 
-# Tests
-simple.epub
-simple.html
-simple.pdf
-simple-conversionLog.csv
-base.epub
-base.html
-base.pdf
-base-conversionLog.csv
-figure-*
-*.png
-*.svg
-
 # tmp
 .tmp-pmcf-*
 
