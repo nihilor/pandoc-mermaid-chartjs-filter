@@ -16,6 +16,13 @@ Just run pandoc and declare to use the pandoc-mermaid-chartjs-filter with `---fi
 pandoc document.md --filter chart-filter -o document.html
 ```
 
+On windows use the following command:
+
+```sh
+pandoc document.md --filter chart-filter.cmd -o document.html
+```
+
+
 To create a mermaid diagram, add a fenced code block to the markdown file, assign `mermaid` as the class, and provide the plain mermaid code.
 
 ~~~markdown
@@ -27,6 +34,10 @@ sequenceDiagram
     John-->>-Alice: I feel great!
 ```
 ~~~
+
+The code above will create the following chart:
+
+![](example-mermaid.png)
 
 To create a Chart.js diagram, add a fenced code block to the markdown file, assign `chartjs` as the class, and provide the options for the chart formatted as YAML.
 
@@ -57,6 +68,10 @@ options:
       beginAtZero: true
 ```
 ~~~
+
+The code above will create the following chart:
+
+![](example-chartjs.png)
 
 ### Advanced Usage
 

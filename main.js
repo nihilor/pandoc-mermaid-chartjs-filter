@@ -1,3 +1,4 @@
+#! /usr/bin/env node
 const pandoc    = require('pandoc-filter')
 const fs        = require('fs')
 const path      = require('path')
