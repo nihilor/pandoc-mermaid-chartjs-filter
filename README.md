@@ -16,10 +16,21 @@ Just run pandoc and declare to use the pandoc-mermaid-chartjs-filter with `---fi
 pandoc document.md --filter chart-filter -o document.html
 ```
 
+You can also use the following commands:
+
+```sh
+pandoc document.md --filter mermaidjs-filter -o document.html
+pandoc document.md --filter chartjs-filter -o document.html
+pandoc document.md --filter diagram-filter -o document.html
+```
+
 On windows use the following command:
 
 ```sh
 pandoc document.md --filter chart-filter.cmd -o document.html
+pandoc document.md --filter chartjs-filter.cmd -o document.html
+pandoc document.md --filter mermaidjs-filter.cmd -o document.html
+pandoc document.md --filter diagram-filter.cmd -o document.html
 ```
 
 
