@@ -6,6 +6,27 @@ yarn-debug.log*
 yarn-error.log*
 lerna-debug.log*
 .pnpm-debug.log*
+pandic-mermaid-chart-filter.log
+
+# Tests
+simple.epub
+simple.html
+simple.pdf
+simple-conversionLog.csv
+base.epub
+base.html
+base.pdf
+base-conversionLog.csv
+figure-*
+*.png
+*.svg
+
+# tmp
+.tmp-pmcf-*
+
+# notes
+.todo.md
+.notes.md
 
 # Diagnostic reports (https://nodejs.org/api/report.html)
 report.[0-9]*.[0-9]*.[0-9]*.[0-9]*.json
@@ -128,3 +149,5 @@ dist
 .yarn/build-state.yml
 .yarn/install-state.gz
 .pnp.*
+
+dev/

@@ -1,0 +1,35 @@
+{
+  "name": "pandoc-mermaid-chartjs-filter",
+  "version": "0.1.0",
+  "description": "Pandoc filter for creating diagrams in mermaid, with Chart.js or other syntaxes in markdown code blocks.",
+  "main": "main.js",
+  "bin": {
+    "mermaid-filter": "main.js",
+    "diagram-filter": "main.js",
+    "chart-filter": "main.js"
+  },
+  "scripts": {
+    "test:simple:html": "pandoc ./test/simple.md --filter ./main.js -o ./simple.html",
+    "test:simple:epub": "pandoc ./test/simple.md --filter ./main.js -o ./simple.epub",
+    "test:simple:pdf": "pandoc ./test/simple.md --filter ./main.js -o ./simple.pdf",
+    "test:base:html": "pandoc ./test/base.md --filter ./main.js -o ./base.html",
+    "test:base:epub": "pandoc ./test/base.md --filter ./main.js -o ./base.epub",
+    "test:base:pdf": "pandoc ./test/base.md --filter ./main.js -o ./base.pdf"
+  },
+  "keywords": [
+    "pandoc",
+    "mermaid",
+    "chart",
+    "markdown",
+    "filter"
+  ],
+  "author": "Mark Lubkowitz <me@mlu.io>",
+  "license": "MIT",
+  "dependencies": {
+    "@mermaid-js/mermaid-cli": "^10.2.4",
+    "canvas": "^2.11.2",
+    "chart.js": "^4.3.0",
+    "pandoc-filter": "^2.1.0",
+    "yaml": "^2.3.1"
+  }
+}
