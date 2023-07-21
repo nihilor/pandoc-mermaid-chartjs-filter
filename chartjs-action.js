@@ -5,8 +5,8 @@ const path = require('path')
 const fs = require('fs')
 
 function createChart(chartData, options) {
-    const canvasWidth = options.width * 1// options.width * options.scale
-    const canvasHeight = (options.width * 1) / 16 * 9 // (options.width * options.scale) / 16 * 9
+    const canvasWidth = options.width * 1
+    const canvasHeight = canvasWidth / 16 * 9
 
     let canvas
     if (options.format.match(/svg/i))
