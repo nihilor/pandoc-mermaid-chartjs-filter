@@ -86,6 +86,9 @@ function action({ t: type, c: value }, format, meta) {
 
     if (!options.filename)
         options.filename = `figure-${figureIndex}.${options.format}`
+    else
+        if (options.filename.match(/\.(svg|png)$/i))
+            options.format = options.filename.match(/\.(svg|png)$/i)[1]
 
     if (options.skip) return null
 
