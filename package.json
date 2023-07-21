@@ -11,7 +11,7 @@
   },
   "preferGlobal": true,
   "scripts": {
-    "examples": "pandoc examples.md --filter ./main.js -o examples.html"
+    "examples": "pandoc examples.md --filter ./main.js -o examples.pdf"
   },
   "keywords": [
     "pandoc",
