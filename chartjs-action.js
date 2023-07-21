@@ -7,12 +7,19 @@ const fs = require('fs')
 function createChart(chartData, options) {
     const canvasWidth = options.width * 1// options.width * options.scale
     const canvasHeight = (options.width * 1) / 16 * 9 // (options.width * options.scale) / 16 * 9
-    const canvas = createCanvas(canvasWidth, canvasHeight)
-    const ctx = canvas.getContext('2d')
-  
-    new Chart(ctx, chartData)
-    const dataBuffer = canvas.toBuffer('image/png')
-    return dataBuffer
+
+    let canvas
+    if (options.format.match(/svg/i))
+        canvas = createCanvas(canvasWidth, canvasHeight, 'svg')
+    else
+        canvas = createCanvas(canvasWidth, canvasHeight)
+
+    new Chart(canvas.getContext('2d'), chartData)
+
+    if (options.format.match(/svg/i))
+        return canvas.toBuffer()
+    else
+        return canvas.toBuffer('image/png')
 }
 
 module.exports = function (content, options) {

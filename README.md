@@ -109,9 +109,9 @@ The example above sets the `format` to `png`, the `theme` to `forest` and the `w
 
 - `background`: Sets the background color of the diagram or chart. The default value is `white`.
 - `caption`: Sets the caption for the diagram or chart. This caption will be used for the `alt` and `title` attribute in HTML.
-- `filename`: Sets the filename for the rendered output file. The default value is `false`, so the rendered images won't be written to the file system. Regard: The format of the rendered image will follow the filename extension, if the filename is set
+- `filename`: Sets the filename for the rendered output file. The default value is `false`, so the rendered images will be named automatically. The filename format follows `figure-<index>.<format>`. Regard: If the filename is set manually, the format of the rendered image will follow the filename extension.
 - `format`: Sets the format of the rendered image. Currently supports `png`, `svg`, and `pdf`. The default value is `png`.
-- `inline`: Sets the handling of the rendered image data. This means, that the images won't be written to the file system, just returned as encoded image data to pandoc.
+- `inline`: Sets the handling of the rendered image data. This means, that the images won't be written to the file system, just returned as encoded image data to pandoc. Default value is `false`.
 - `scale`: Sets the scaling factor of the rendered image. Currently only affects diagrams, that are rendered with Puppeteer, namely Mermaid.
 - `skip`: Skips the code block without rendering an image and without replacing the code with an image. This is necessary, if you want to keep Mermaid code blocks as code examples. Default value is `false`.
 - `theme`: Sets the theme to be used for rendering mermaid diagrams. Default value is `default`.
