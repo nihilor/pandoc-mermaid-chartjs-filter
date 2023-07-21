@@ -86,8 +86,36 @@ The code above will create the following chart:
 
 ### Advanced Usage
 
-The `pandoc-mermaid-chartjs-filter` provides additional options to configure the results.
+The `pandoc-mermaid-chartjs-filter` provides additional options to configure the results. Therefore you have to use the special pandoc syntax for code blocks to set the additional options.
 
+~~~markdown
+```{.mermaid [option]=[value] [optionN]=[valueN]}
+...
+~~~
+
+AS you can see, you have to enclose the code block class in curly braces, add a point before the class identifier and, seperated by a space, set as much options and values, as you like to.
+
+~~~markdown
+```{.mermaid format="png" theme="forest" width="1200"}
+sequenceDiagram
+    Alice->>+John: Hello John, how are you?
+    Alice->>+John: John, can you hear me?
+    John-->>-Alice: Hi Alice, I can hear you!
+    John-->>-Alice: I feel great!
+```
+~~~
+
+The example above sets the `format` to `png`, the `theme` to `forest` and the `width` to `1200`.
+
+- `background`: Sets the background color of the diagram or chart. The default value is `white`.
+- `caption`: Sets the caption for the diagram or chart. This caption will be used for the `alt` and `title` attribute in HTML.
+- `filename`: Sets the filename for the rendered output file. The default value is `false`, so the rendered images won't be written to the file system. Regard: The format of the rendered image will follow the filename extension, if the filename is set
+- `format`: Sets the format of the rendered image. Currently supports `png`, `svg`, and `pdf`. The default value is `png`.
+- `inline`: Sets the handling of the rendered image data. This means, that the images won't be written to the file system, just returned as encoded image data to pandoc.
+- `scale`: Sets the scaling factor of the rendered image. Currently only affects diagrams, that are rendered with Puppeteer, namely Mermaid.
+- `skip`: Skips the code block without rendering an image and without replacing the code with an image. This is necessary, if you want to keep Mermaid code blocks as code examples. Default value is `false`.
+- `theme`: Sets the theme to be used for rendering mermaid diagrams. Default value is `default`.
+- `width`: Sets the width of the rendered image. Default value is `800`.
 
 ## LICENSE
 
