@@ -1,6 +1,6 @@
 {
   "name": "pandoc-mermaid-chartjs-filter",
-  "version": "0.1.5",
+  "version": "0.1.6",
   "description": "Pandoc filter for creating diagrams in mermaid, with Chart.js or other syntaxes in markdown code blocks.",
   "main": "main.js",
   "bin": {
@@ -29,7 +29,7 @@
     "@mermaid-js/mermaid-cli": "^10.2.4",
     "canvas": "^2.11.2",
     "chart.js": "^4.3.0",
-    "pandoc-filter": "^2.1.0",
+    "pandoc-filter": "^2.2.0",
     "yaml": "^2.3.1"
   }
 }
