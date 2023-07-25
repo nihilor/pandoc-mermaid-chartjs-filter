@@ -51,7 +51,7 @@ function loadOptions(userOptions = []) {
         caption: '',
         filename: false,
         format: 'png',
-        inline: false,
+        inline: true,
         scale: 2,
         skip: false,
         theme: 'default',
@@ -104,6 +104,8 @@ function action({ t: type, c: value }, format, meta) {
 
     figureIndex++
 
+    //  console.log(process.cwd())
+
     let src = null
     if (options.inline && options.format.match(/svg|png/i))
         src = createDataURI(data, options.format)
@@ -112,16 +114,36 @@ function action({ t: type, c: value }, format, meta) {
             src = options.filename
     }
 
-    if (src)
-        return pandoc.Para([
-            pandoc.Image(
+    if (src) {
+        if (title !== '') {
+            return pandoc.Figure(
                 [id, classes, []],
-                [pandoc.Str(alt)],
-                [src, title]
+                [
+                    [pandoc.Str(title)],
+                    [pandoc.Para([pandoc.Str(title)])]
+                ],
+                [pandoc.Para([
+                    pandoc.Image(
+                        [id, classes, []],
+                        [pandoc.Str(alt)],
+                        [src, title]
+                    )
+                ])]
             )
-        ])
-    else
+        }
+        else {
+            return pandoc.Para([
+                pandoc.Image(
+                    [id, classes, []],
+                    [pandoc.Str(alt)],
+                    [src, title]
+                )
+            ])
+        }
+    }
+    else {
         return null
+    }
 }
 
 createLogger()
