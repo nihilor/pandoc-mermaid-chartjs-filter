@@ -8,6 +8,8 @@ Pandoc filter for creating diagrams with mermaid, Chart.js or others provided vi
 npm install -g pandoc-mermaid-chartjs-filter
 ```
 
+If you have troubles installing on Mac OS, follow the description [node-canvas](https://www.npmjs.com/package/canvas).
+
 ## Usage
 
 Just run pandoc and declare to use the pandoc-mermaid-chartjs-filter with `---filter chart-filter`.
